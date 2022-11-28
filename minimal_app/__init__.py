@@ -196,5 +196,5 @@ if "SESSION_SECRET_KEY" in app_secrets:
 ################################################################################
 
 # from minimal_app.lifecycle_handlers import *
-# from minimal_app.pages import *
-# from minimal_app.api import *
+from minimal_app.pages import *
+from minimal_app.api import *
