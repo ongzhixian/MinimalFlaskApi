@@ -12,8 +12,7 @@ import json
 import logging
 from os import environ, path, makedirs
 from flask import Flask, current_app
-# from forum_app.features.logging import log
-# from forum_app.features.wiki import Wiki
+from minimal_app.features.logging import log
 
 ################################################################################
 # Helper functions for Flask application definition
@@ -182,16 +181,11 @@ app_settings = get_app_settings(app_path)
 
 configure_logging(app_settings)
 
-# log.info("Starting application.")
+log.info("Starting application.")
 
 # app_state = new_app_state(app_path, app_secrets, app_settings)
 
 app = Flask(__name__, static_url_path='/', static_folder='wwwroot', template_folder='jinja')
-
-# wiki = Wiki(app_secrets['mongodb:minitools:ConnectionString'])
-# from forum_app.features.data_store import DataStore
-# ds = DataStore(app_state)
-# print(ds["ads"])
 
 if "SESSION_SECRET_KEY" in app_secrets:
     app.secret_key = app_secrets["SESSION_SECRET_KEY"]
@@ -201,6 +195,6 @@ if "SESSION_SECRET_KEY" in app_secrets:
 # Import pages and API for application
 ################################################################################
 
-# from forum_app.lifecycle_handlers import *
-# from forum_app.pages import *
-# from forum_app.api import *
+# from minimal_app.lifecycle_handlers import *
+# from minimal_app.pages import *
+# from minimal_app.api import *

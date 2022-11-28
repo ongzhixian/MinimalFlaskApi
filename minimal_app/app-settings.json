@@ -1,0 +1,9 @@
+{
+    "logging": {
+        "werkzeug" : "WARNING",
+        "git" : "WARNING",
+        "faker": "WARNING"
+    },
+    "cc_log_file_path": "./logs/minimal_app.log",
+    "is_development": true
+}
